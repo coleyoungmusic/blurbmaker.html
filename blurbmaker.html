@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<title>Blurb Maker</title>
+
+<body background="http://www.solidbackgrounds.com/images/2560x1440/2560x1440-light-blue-solid-color-background.jpg">
+<h1>Blurb Maker</h1>
+<form>
+<p>Select patients disease state:</p>
+<select id="DiseaseState" onchange="myFunction()">
+  <option></option>
+  <option>Acromegaly - Medicare Only</option>
+  <option>Acute Myeloid Leukemia</option>
+  <option>Ankylosing Spondylitis - Medicare Only</option>
+  <option>Asthma - Medicare Only</option>
+  <option>Atopic Dermatitis</option>
+  <option>Arrhythmia in Patients with Atrial Fibrillation or Atrial Flutter - Medicare Only</option>
+  <option>Basal Cell Carcinoma</option>
+  <option>Bone Metastases - Medicare Only</option>
+  <option>Chemotherapy-Induced Nausea and Vomiting - Medicare Only</option>
+  <option>Chronic Lymphocytic Leukemia - Medicare Only</option>
+  <option>Chronic Iron or Lead Overload - Medicare Only</option>
+  <option>Colorectal Cancer - Medicare Only</option>
+  <option> Cushing's Disease or Syndrome</option>
+  <option>Cutaneous T-Cell Lymphoma</option>
+  <option>Diabetic Foot Ulcers</option>
+  <option>Exocrine Pancreatic Insufficiency</option>
+  <option>Gaucher Disease</option>
+  <option>Heart Failure - Medicare Only</option>
+  <option>Hepatitis C</option>
+  <option>Homozygous Familial Hypercholesterolemia Premium Assistance</option>
+  <option>HIV Treatment and Prevention - Medicare Only</option>
+  <option>Hypercholesterolemia - Medicare Only</option>
+  <option>Hyperkalemia - Medicare Only</option>
+  <option>Idiopathic Pulmonary Fibrosis - Medicare Only</option>
+  <option>Immune Thrombocytopenic Purpura Co-Pay Assistance - Medicare Only</option>
+  <option>Immune Thrombocytopenic Purpura Travel Assistance</option>
+  <option>Inflammatory Bowel Disease (Crohn's Disease and Ulcerative Colitis) - Medicare Only</option>
+  <option>Mantle Cell Lymphoma - Medicare Only</option>
+  <option>Metastatic Breast Cancer - Medicare Only</option>
+  <option>Metastatic Prostate Cancer Co-Pay Assistance</option>
+  <option>Metastatic Prostate Cancer - Travel Assistance</option>
+  <option>Melanoma - Medicare Only</option>
+  <option>Multiple Sclerosis - Medicare Only</option>
+  <option>Myelodysplastic Syndromes</option>
+  <option>Myeloproliferative Neoplasms (Myelofibrosis, PV, ET)</option>
+  <option>Neuroendocrine Tumors of Pancreatic Origin</option>
+  <option>Neutropenia - Medicare Only</option>
+  <option>Non-Hodgkin's Lymphoma - Medicare Only</option>
+  <option>Non-Small Cell Lung Cancer - Medicare Only</option>
+  <option>Ovarian Cancer - Medicare Only</option>
+  <option>Parkinson's Disease - Medicare Only</option>
+  <option>Philadelphia Chromosome Positive Acute Lymphoblastic Leukemia - Medicare Only</option>
+  <option>Plaque Psoriasis (PsO) - Medicare Only</option>
+  <option>Postmenopausal Osteoporosis - Medicare Only</option>
+  <option>Psoriatic Arthritis (PsA) - Medicare Only</option>
+  <option>Renal Cell Carcinoma - Medicare Only</option>
+  <option>Respiratory Syncytial Virus</option>
+  <option>Retinal Vein Occlusion - Medicare Only</option>
+  <option>Rheumatoid Arthritis (RA) - Medicare Only</option>
+  <option>Short Bowel Syndrome Co-Pay Assistance</option>
+  <option>Short Bowel Syndrome Premium </option>
+  <option>Thyroid Cancer - Medicare Only</option>
+  <option>Tuberous Sclerosis Complex</option>
+  <option>Uveitis</option>
+  <option>Venous Leg Ulcers</option>
+  <option>Wilson Disease</option>
+
+  
+
+</select>
+</form>
+
+<p>What is the patients name?</p>
+<input type="text" id="Name" value="">
+
+<p>Enter the name of the medication patient is needing assistance with:</p>
+<input type="text" id="Medication" value="">
+
+<p>What is the patients household size?</p>
+<input type="text" id="HouseHoldSize" value="">
+
+<form>
+<p>Patients household (DOES) or (DOES NOT) file for taxes?</p>
+<select id="Taxes" onchange="myFunction()">
+  <option></option>
+  <option>does</option>
+  <option>does not</option>
+</select>
+</form>
+
+<p>Enter patients annual income (gross amount)</p>
+<input type="text" id="GrossIncome" value="">
+
+<form>
+<p>Patient (IS) or (IS NOT) within the programs income guidelines</p>
+<select id="IncomeGuidelines" onchange="myFunction()">
+  <option></option>
+  <option>is</option>
+  <option>is not</option>
+</select>
+</form>
+
+<p>Enter patients insurance:</p>
+<input type="text" id="Insurance" value="">
+
+<form>
+<p>The patient (ACCEPTED) or (DID NOT ACCEPT) the declaration?</p>
+<select id="Declaration" onchange="myFunction()">
+  <option></option>
+  <option>accepted</option>
+  <option>did not accept</option>
+</select>  
+</form>
+
+<p></p>
+<button onclick="myFunction()">Submit</button>
+<p>(press F5 to reset)</p>
+
+
+<p id="Submit"></p>
+
+<script>
+function myFunction() {
+    var DiseaseState = document.getElementById("DiseaseState").value;
+    var Name = document.getElementById("Name").value;
+    var Medication = document.getElementById("Medication").value;
+    var HouseHoldSize = document.getElementById("HouseHoldSize").value;
+    var Taxes = document.getElementById("Taxes").value;
+    var GrossIncome = document.getElementById("GrossIncome").value;
+    var IncomeGuidelines = document.getElementById("IncomeGuidelines").value;
+    var Insurance = document.getElementById("Insurance").value;
+    var Declaration = document.getElementById("Declaration").value;
+    document.getElementById("Submit").innerHTML = DiseaseState + ":" + " " + "Received call from " + Name + " seeking assistance with the cost of " + Medication + "." + " Patient has a household size of " + HouseHoldSize + "." + " The patients household " + Taxes + " file a Federal tax return. " + "The household's income of " + GrossIncome + " " + IncomeGuidelines + " within the program income guidelines. " + "The patient's primary insurer is " + Insurance + "." + " Applicant Declaration read to pt.  Pt understands terms and conditions of applicant declaration and " + Declaration + " disclaimer authorization to release medical information. " + "Correspondences automatically sent to Pt/MDO." + " Reviewed record for determination, and patient qualifies for assistance.  Mailed pt and faxed MD approval letters.";
+}
+</script>
+
+</body>
+</html>
